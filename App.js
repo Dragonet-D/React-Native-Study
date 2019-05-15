@@ -21,6 +21,7 @@ export default class App extends Component<Props> {
     render() {
         return (
             <View style={[style.container, style.other]}>
+                <Text>123</Text>
             </View>
         );
     }
@@ -30,9 +31,12 @@ const style = StyleSheet.create({
     container: {
         width: 200,
         height: 200,
-        backgroundColor: "#ff6600",
+        backgroundColor: "pink",
         borderRadius: 10,
-        marginLeft: 20
+        marginLeft: 20,
+        borderWidth: 2,
+        borderColor: "#532aa3",
+        borderStyle: "dashed"
     },
     other: {
         marginVertical: 20
