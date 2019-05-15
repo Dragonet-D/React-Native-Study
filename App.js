@@ -7,7 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    Button
+} from 'react-native';
 
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,10 +24,20 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+    onPressLearnMore = () => {
+        alert(123);
+    };
+
     render() {
         return (
             <View style={[style.container, style.other]}>
                 <Text style={style.text}>123</Text>
+                <Button
+                    onPress={this.onPressLearnMore}
+                    title="Learn More"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
             </View>
         );
     }
@@ -48,6 +64,5 @@ const style = StyleSheet.create({
     text: {
         color: "#fff",
         fontWeight: "900",
-        display: "none"
     }
 });
