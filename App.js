@@ -12,7 +12,8 @@ import {
     StyleSheet,
     Text,
     View,
-    Button
+    Button,
+    TextInput
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -24,6 +25,9 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+    state = {
+        text: ""
+    };
     onPressLearnMore = () => {
         alert(123);
     };
@@ -37,6 +41,11 @@ export default class App extends Component<Props> {
                     title="Learn More"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
+                />
+                <TextInput
+                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+                    onChangeText={(text) => this.setState({text})}
+                    value={this.state.text}
                 />
             </View>
         );
