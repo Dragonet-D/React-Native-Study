@@ -13,7 +13,8 @@ import {
     Text,
     View,
     Button,
-    TextInput
+    TextInput,
+    ActivityIndicator
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -47,6 +48,7 @@ export default class App extends Component<Props> {
                     onChangeText={(text) => this.setState({text})}
                     value={this.state.text}
                 />
+                <ActivityIndicator size="large" color="red"/>
             </View>
         );
     }
